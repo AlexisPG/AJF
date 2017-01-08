@@ -1,0 +1,31 @@
+<?php if($flashBag->hasMessages()):	?>				
+    <p class="notice"><?=	$flashBag->fetchMessage() ?></p>
+    <hr>
+<?php endif; ?>
+
+<!-- Liste des produits -->
+
+<table class="generic-table">
+    <caption>Carte du restaurant</caption>
+    <thead>
+    <tr>
+        <th>Photo</th>
+        <th>Description</th>
+        <th>Catégorie</th>
+        <th>Prix</th>
+    </tr>
+    </thead>
+    <tbody class="meal-list">
+    <?php foreach ($products as $product): ?>
+        <tr>
+            <td><img alt="<?= $product['name'] ?>" src="<?= $wwwUrl ?>/images/meals/<?= $product['photo'] ?>"></td>
+            <td>
+                <h3><?= $product['name'] ?></h3>
+                <p><?= $product['description'] ?></p>
+            </td>
+            <td><?= $product['category'] ?></td>
+            <td><?= number_format($product['salePrice'], 2) ?>€</td>
+        </tr>
+    <?php endforeach ?>
+    </tbody>
+</table>

@@ -1,0 +1,63 @@
+  Name: "Coca-Cola"
+  Photo: "coca.jpg"
+  Description: "Mmmm, le Coca-Cola avec 10 morceaux de sucres et tout plein de caféine !"
+  QuantityInStock: 72
+  BuyPrice: 0.6
+  SalePrice: 3
+-
+  Name: "Bagel Thon"
+  Photo: "bagel_thon.jpg"
+  Description: "Notre bagel est constitué d'un pain moelleux avec des grains de sésame et du thon albacore, accompagné de feuilles de salade fraîche du jour  et d'une sauce renversante :-)"
+  QuantityInStock: 18
+  BuyPrice: 2.75
+  SalePrice: 5.5
+-
+  Name: "Bacon Cheeseburger"
+  Photo: "bacon_cheeseburger.jpg"
+  Description: "Ce délicieux cheeseburger contient un steak haché viande française de 150g ainsi que d'un buns grillé juste comme il faut, le tout accompagné de frites fraîches maison !"
+  QuantityInStock: 14
+  BuyPrice: 6
+  SalePrice: 12.5
+-
+  Name: "Carrot Cake"
+  Photo: "carrot_cake.jpg"
+  Description: "Le carrot cake maison ravira les plus gourmands et les puristes : tous les ingrédients sont naturels !\r\nÀ consommer sans modération"
+  QuantityInStock: 9
+  BuyPrice: 3
+  SalePrice: 6.75
+-
+  Name: "Donut Chocolat"
+  Photo: "chocolate_donut.jpg"
+  Description: "Les donuts sont fabriqués le matin même et sont recouvert d'une délicieuse sauce au chocolat !"
+  QuantityInStock: 16
+  BuyPrice: 3
+  SalePrice: 6.2
+-
+  Name: "Dr. Pepper"
+  Photo: "drpepper.jpg"
+  Description: "Son goût sucré avec de l'amande vous ravira !"
+  QuantityInStock: 53
+  BuyPrice: 0.5
+  SalePrice: 2.9
+-
+  Name: "Milkshake"
+  Photo: "milkshake.jpg"
+  Description: "Notre milkshake bien crémeux contient des morceaux d'Oréos et est accompagné de crème chantilly et de smarties en guise de topping. Il éblouira vos papilles !"
+  QuantityInStock: 12
+  BuyPrice: 2
+  SalePrice: 5.35
+-
+  Name: "Frites"
+  Photo: "frites.jpg"
+  Description: "Aaaaaah ces merveilleux bâtonnets de pomme de terre qui nous régalent depuis qu'on est petit. Venez déguster les notres, elles sont faites maison !"
+  QuantityInStock: 127
+  BuyPrice: 0.5
+  SalePrice: 2.5
+-
+  Name: "Hot-dog"
+  Photo: "hotdog.jpeg"
+  Description: "Le typique sandwitch américain avec sa saucisse cuite accompagnée de ketchup, moutarde, oignons ou encore une bonne mayonnaise dont nous avons le secret."
+  QuantityInStock: 55
+  BuyPrice: 0.7
+  SalePrice: 3.5
+...

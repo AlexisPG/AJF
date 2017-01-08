@@ -1,0 +1,62 @@
+<h2><i class="fa fa-shopping-cart"></i> Passer une commande</h2>
+
+<form id="order-form" class="generic-form">
+    <fieldset>
+        <legend>Ajouter un article</legend>
+
+        <aside id="error-message" class="error-message hidden">
+            <h3><i class="fa fa-warning"></i> Il y a <em class="total-error-count">1</em> erreur(s) dans le formulaire !</h3>
+            <p></p>
+        </aside>
+
+        <ul>
+            <li>
+                <label for="meal">Nom :</label>
+                <select id="meal" name="meal">
+                    <?php foreach ($products as $product): ?>
+                        <option value="<?= $product['Id'] ?>"><?= $product['Name'] ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <article id="meal-details" class="meal-details no-left-label">
+                    <img src="<?= $wwwUrl ?>/images/meals/<?= $products[0]['Photo'] ?>" alt="Photo du produit">
+                    <p><?= $products[0]['Description'] ?></p>
+                    <span>Prix : <strong><?= number_format($products[0]['SalePrice'], 2) ?></strong> €</span>
+                </article>
+            </li>
+            <li>
+                <label for="quantity">Quantité :</label>
+                <input id="quantity" class="quantity" type="text" value="0" maxlength="2" name="quantity">
+            </li>
+            <li>
+                <button class="button button-primary no-left-label" type="submit">Ajouter</button>
+            </li>
+        </ul>
+    </fieldset>
+
+    <fieldset>
+        <legend>Récapitulatif de la commande</legend>
+        <section id="order-summary">
+            <table class="generic-table">
+                <thead>
+                <tr>
+                    <th class="number">Quantité</th>
+                    <th>Produit</th>
+                    <th class="number">Prix Unitaire</th>
+                    <th class="number">Prix Total</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                
+                </tbody>
+            </table>
+        </section>
+    </fieldset>
+</form>
+
+<ul class="link-list">
+    <li>
+        <button id="validate-order" class="button button-primary" disabled>Valider la commande</button>
+        <a class="button button-cancel small" href="<?= $requestUrl ?>">Annuler</a>
+    </li>
+</ul>

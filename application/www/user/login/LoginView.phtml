@@ -1,0 +1,39 @@
+<!-- Page de connexion -->
+
+
+<h2><i class="fa fa-user"></i> Se connecter avec un compte utilisateur</h2>
+<form class="generic-form" action="<?= $requestUrl ?>/user/login" method="post">
+    <?php if(isset($errorMessage)) : ?>
+        <div class="error-message">
+            <p><?= $errorMessage ?></p>
+            <?php foreach($errors as $error): ?>
+                <p><?= $error ?></p>
+            <?php endforeach ?>
+        </div>
+    <?php endif ?>
+    <fieldset>
+        <legend><i class="fa fa-lock"></i> Informations d'authentification</Informa></legend>
+        <ul>
+            <li>
+                <label for="email">E-mail </label>
+                <input type="text" id="email" name="email">
+                <?php if(isset($errors['email'])): ?>
+                    <p class="error-message"><?= $errors['email']; ?></p>
+                <?php endif ?>
+            </li>
+            <li>
+                <label for="password">Mot de passe </label>
+                <input type="password" id="password" name="password">
+                <?php if(isset($errors['password'])): ?>
+                    <p class="error-message"><?= $errors['password']; ?></p>
+                <?php endif ?>
+            </li>
+        </ul>
+    </fieldset>
+    <ul>
+        <li>
+            <button class="button button-primary" type="submit">Se connecter</button>
+            <a class="button button-cancel" href="<?= $requestUrl ?>">Annuler</a>
+        </li>
+    </ul>
+</form>

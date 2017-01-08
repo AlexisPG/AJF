@@ -1,0 +1,128 @@
+<!-- Créer un compte -->
+<!-- TODO : mettre les required sur les champs -->
+
+
+<h2><i class="fa fa-user"></i> Création d'un compte client</h2>
+<form class="generic-form" action="<?= $requestUrl ?>/user/register" method="post">
+<?php if(isset($errorMessage)) : ?>
+    <div class="error-message">
+        <p><?= $errorMessage ?></p>
+        <?php foreach($errors as $error): ?>
+            <p><?= $error ?></p>
+        <?php endforeach ?>
+    </div>
+<?php endif ?>
+    <fieldset>
+        <legend><i class="fa fa-book"></i> Identité et coordonnées</legend>
+        <ul>
+            <li>
+                <label for="lastName">Nom : </label>
+                <input type="text" id="lastName" name="lastName">
+                <?php if(isset($errors['lastName'])): ?>
+                    <p class="error-message"><?= $errors['lastName']; ?></p>
+                <?php endif ?>
+            </li>
+            <li>
+                <label for="firstName">Prénom : </label>
+                <input type="text" id="firstName" name="firstName">
+                <?php if(isset($errors['firstName'])): ?>
+                    <p class="error-message"><?= $errors['firstName']; ?></p>
+                <?php endif ?>
+            </li>
+            <li>
+                <label for="birthdate">Date de naissance : </label>
+                <!-- Boucle FOR pour les jou0sr -->
+                <select name="day">
+                    <?php for ($day = 1; $day <= 31; $day++) : ?>
+                        <option value="<?= $day ?>"><?= $day ?></option>
+
+                    <?php endfor ?>
+                </select>
+                <span>/</span>
+                <select name="month">
+                    <option value="1">Janvier</option>
+                    <option value="2">Février</option>
+                    <option value="3">Mars</option>
+                    <option value="4">Avril</option>
+                    <option value="5">Mai</option>
+                    <option value="6">Juin</option>
+                    <option value="7">Juillet</option>
+                    <option value="8">Août</option>
+                    <option value="9">Septembre</option>
+                    <option value="10">Octobre</option>
+                    <option value="11">Novembre</option>
+                    <option value="12">Décembre</option>
+                </select>
+                <span>/</span>
+                <select name="year">
+                    <?php for($year = date("Y"); $year > date('Y') - 100 ; $year--) :?>
+                    <option value="<?= $year ?>"><?= $year ?></option>
+                    <?php endfor ?>
+                </select>
+                <?php if(isset($errors['birthdate'])): ?>
+                    <p class="error-message"><?= $errors['birthdate']; ?></p>
+                <?php endif ?>
+            </li>
+            <li>
+                <label class="textarea" for="address">Adresse : </label>
+                <textarea type="text" id="address" name="address" rows="3"></textarea>
+                <?php if(isset($errors['address'])): ?>
+                    <p class="error-message"><?= $errors['address']; ?></p>
+                <?php endif ?>
+            </li>
+            <li>
+                <label for="city">Ville : </label>
+                <input type="text" id="city" name="city">
+                <?php if(isset($errors['city'])): ?>
+                    <p class="error-message"><?= $errors['city']; ?></p>
+                <?php endif ?>
+            </li>
+            <li>
+                <label for="country">Pays : </label>
+                <input type="text" id="country" name="country">
+                <?php if(isset($errors['country'])): ?>
+                    <p class="error-message"><?= $errors['country']; ?></p>
+                <?php endif ?>
+            </li>
+            <li>
+                <label for="zipCode">Code Postal : </label>
+                <input id="zipCode"	class="zip-code" type="text" maxlength="5" name="zipCode" value="">
+                <?php if(isset($errors['zipCode'])): ?>
+                    <p class="error-message"><?= $errors['zipCode']; ?></p>
+                <?php endif ?>
+            </li>
+            <li>
+                <label for="phone">Téléphone : </label>
+                <input class="phone" type="text" id="phone" name="phone" maxlength="15"  colspan="15">
+                <?php if(isset($errors['phone'])): ?>
+                    <p class="error-message"><?= $errors['phone']; ?></p>
+                <?php endif ?>
+            </li>
+        </ul>
+    </fieldset>
+    <fieldset>
+        <legend><i class="fa fa-lock"></i> Informations d'authentification</Informa></legend>
+        <ul>
+            <li>
+                <label for="email">E-mail </label>
+                <input type="text" id="email" name="email">
+                <?php if(isset($errors['email'])): ?>
+                    <p class="error-message"><?= $errors['email']; ?></p>
+                <?php endif ?>
+            </li>
+            <li>
+                <label for="password">Mot de passe </label>
+                <input type="password" id="password" name="password">
+                <?php if(isset($errors['password'])): ?>
+                    <p class="error-message"><?= $errors['password']; ?></p>
+                <?php endif ?>
+            </li>
+        </ul>
+    </fieldset>
+    <ul>
+        <li>
+            <button class="button button-primary" type="submit">Créer le compte</button>
+            <a class="button button-cancel" href="<?= $requestUrl ?>">Annuler</a>
+        </li>
+    </ul>
+</form>
